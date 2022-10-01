@@ -4,10 +4,6 @@ Usage:
 # Create train data:
 python generate_tfrecord.py --label=<LABEL> --csv_input=<PATH_TO_ANNOTATIONS_FOLDER>/train_labels.csv  --output_path=<PATH_TO_ANNOTATIONS_FOLDER>/train.record
 
-USE THIS ONE FROM ROOT FOLDER
-python3 src/generate_tfrecord.py --label="bicycle" --csv_input="input/labels/image_labels.csv" --output_path="input/labels/train.record" --img_path="input/train/"
-
-
 # Create test data:
 python generate_tfrecord.py --label=<LABEL> --csv_input=<PATH_TO_ANNOTATIONS_FOLDER>/test_labels.csv  --output_path=<PATH_TO_ANNOTATIONS_FOLDER>/test.record
 """
