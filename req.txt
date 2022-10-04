@@ -1,0 +1,16 @@
+tf_slim
+tf-models-official
+lvis
+Cython 
+contextlib2 
+pillow 
+lxml 
+matplotlib
+pycocotools
+fastapi
+uvicorn
+imutils
+numpy
+dlib
+tensorflow==2.7.0
+opencv-python==4.5.5.64

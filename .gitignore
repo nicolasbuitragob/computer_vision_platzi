@@ -148,6 +148,7 @@ dmypy.json
 #images
 *.jpg
 *.jpeg
+*.png
 /custom_ssd_mobilenet
 
 *.csv
