@@ -10,16 +10,16 @@ import base64
 
 class CountModel:
     def __init__(self):
-        detect_fn = tf.saved_model.load("../tuned_model/saved_model")
+        detect_fn = tf.saved_model.load("saved_model")
         self.detect_fn = detect_fn
     
     def predict(self, image_64_decode):
-        
-        PATH_VIDEO = "/tmp/video_in.mp4"
+      
+        PATH_VIDEO = "video_in.mp4"
         video_result = open(PATH_VIDEO, "wb")
         video_result.write(base64.b64decode(image_64_decode))
         
-        PATH_OUTPUT = "/tmp/output.mp4"
+        PATH_OUTPUT = "output.mp4"
 
         SKIP_FPS = 30
         TRESHOLD = 0.5
@@ -46,7 +46,7 @@ class CountModel:
 
         fps = FPS().start()
 
-        fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
         writer = cv2.VideoWriter(PATH_OUTPUT, fourcc, 20.0, (W, H), True)
 
         while True:
@@ -139,9 +139,9 @@ class CountModel:
                 cv2.circle(frame, (centroid[0], centroid[1]), 4, (0,255,0), -1)
 
             info = [
-                  ("Subiendo", totalUp),
-                  ("Bajando", totalDown),
-                  ("Estado", status),
+                  ("Up", totalUp),
+                  ("Down", totalDown),
+                  ("Status", status),
             ]
 
             for (i, (k,v)) in enumerate(info):
@@ -155,8 +155,8 @@ class CountModel:
 
         fps.stop()
 
-        print("Tiempo completo {}".format(fps.elapsed()))
-        print("Tiempo aproximado por frame {}".format(fps.fps()))
+        print("Time completed {}".format(fps.elapsed()))
+        print("Time per frame {}".format(fps.fps()))
 
         writer.release()
 

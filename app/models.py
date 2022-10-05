@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class PredictionRequest(BaseModel):
-    video:str 
+    video:str
     
 
 class PredictionResponse(BaseModel):
